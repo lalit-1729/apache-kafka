@@ -1,4 +1,4 @@
-package com.apache.kafka.app.products.event;
+package com.apache.kafka.Shared;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
