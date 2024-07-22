@@ -3,12 +3,20 @@ spring:
     name: EmailNotificationService
   kafka:
     consumer:
-      bootstrap-server:
-        - localhost:9092,
-        - localhost:9094
+      bootstrap-server: localhost:9092, localhost:9094
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonSerializer
-      group-id: product-created-event-consumers
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      group-id: product-created-event-consumers # unique string that identifies consumer group
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: com.apache.kafka.Shared
+
+product:
+  created:
+    topic:
+      name: product-created-events-topic
 
 server:
   port: 9088
