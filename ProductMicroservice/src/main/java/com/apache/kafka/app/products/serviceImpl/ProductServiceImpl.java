@@ -1,7 +1,7 @@
 package com.apache.kafka.app.products.serviceImpl;
 
+import com.apache.kafka.Shared.ProductCreatedEvent;
 import com.apache.kafka.app.products.dtos.CreateProductRequest;
-import com.apache.kafka.app.products.event.ProductCreatedEvent;
 import com.apache.kafka.app.products.service.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
